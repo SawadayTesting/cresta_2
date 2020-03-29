@@ -1,0 +1,320 @@
+@charset "UTF-8";
+/*!==================================
+	このCSSはSassで記述されていますので
+	直接編集しないで下さい！
+==================================*/
+/* A Modern CSS Reset */
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+
+ul[class] {
+	padding: 0;
+}
+
+body,
+h1,
+p,
+ul[class] {
+	margin: 0;
+}
+
+body {
+	line-height: 1.5;
+	min-height: 100vh;
+	scroll-behavior: smooth;
+	text-rendering: optimizeSpeed;
+}
+
+ul[class] {
+	list-style: none;
+}
+
+a:not([class]) {
+	-webkit-text-decoration-skip: ink;
+	text-decoration-skip-ink: auto;
+}
+
+img {
+	display: block;
+	max-width: 100%;
+}
+
+input {
+	font: inherit;
+}
+
+img:not([alt]) {
+	filter: blur(10px);
+}
+
+/*==================================
+  共通部分 - タイプセレクタ+見出し+hp-の指定。
+	必要なら、後述のcssで上書きしていく。
+===================================*/
+body {
+	background-color: #fff;
+	color: #333;
+	font-family: "Helvetica Neue", "Arial", "Hiragino Kaku Gothic ProN", "Hiragino Sans", "Meiryo", sans-serif;
+	overflow-x: hidden;
+}
+
+a {
+	color: #fff;
+	display: block;
+	text-decoration: none;
+}
+
+ul {
+	list-style-type: none;
+	padding-left: 0;
+}
+
+/*フルードイメージ化*/
+img {
+	height: auto;
+	max-width: 100%;
+	vertical-align: bottom;
+}
+
+/*見出し*/
+
+/*hp-：ヘルパークラス*/
+.hp-reset {
+	margin: 0 !important;
+	padding: 0 !important;
+}
+
+.hp-mtb0 {
+	margin-bottom: 0 !important;
+	margin-top: 0 !important;
+}
+
+.hp-tac {
+	text-align: center !important;
+}
+
+/*position:fixed使用時、ページ内リンクのずれを解消*/
+
+/*==================================
+  ly_layout - ページ共通
+===================================*/
+.ly_footer {
+	-ms-flex-align: center;
+	-ms-flex-pack: center;
+	align-items: center;
+	background-color: #1b1310;
+	color: #fff;
+	display: -ms-flexbox;
+	display: flex;
+	height: 72px;
+	justify-content: center;
+	width: 100%;
+}
+
+/*==================================
+  メディアクエリ - ページ共通
+===================================*/
+/*---------------------
+	ハンバーガーメニュー
+----------------------*/
+#nav-drawer {
+	position: relative;
+}
+
+.nav-unshown {
+	/*チェックボックス等は非表示に*/
+	display: none;
+}
+
+#nav-open {
+	/*アイコンのスペース*/
+	display: inline-block;
+	height: 22px;
+	vertical-align: middle;
+	width: 30px;
+}
+
+/*ハンバーガーアイコンをCSSだけで表現*/
+#nav-open span,
+#nav-open span::before,
+#nav-open span::after {
+	background: #fff;
+	border-radius: 3px;
+	content: "";
+	cursor: pointer;
+	display: block;
+	/*線の太さ*/
+	height: 2px;
+	position: absolute;
+	/*長さ*/
+	width: 25px;
+}
+
+#nav-open span::before {
+	bottom: -8px;
+}
+
+#nav-open span::after {
+	bottom: -16px;
+}
+
+#nav-content {
+	background: #1b1310;
+	height: 100%;
+	left: 0;
+	overflow: auto;
+	position: fixed;
+	top: 0;
+	/*左に隠しておく*/
+	transform: translateX(-105%);
+	/*滑らかに表示*/
+	transition: 0.3s ease-in-out;
+	width: 100%;
+	z-index: 9999;
+}
+
+#nav-input:checked ~ #nav-content {
+	box-shadow: 6px 0 25px rgba(0, 0, 0, 0.15);
+	/*中身を表示（右へスライド）*/
+	transform: translateX(0%);
+}
+
+.el_hamburgerClose {
+	border: 2px solid rgba(0, 0, 0, 0.1);
+	cursor: pointer;
+	display: inline-block;
+	height: 25px;
+	margin: 30px 15px 0 calc(100% - 55px);
+	position: relative;
+	width: 25px;
+}
+
+.el_hamburgerClose span::before,
+.el_hamburgerClose span::after {
+	background: #fff;
+	content: "";
+	display: block;
+	height: 16%;
+	left: 50%;
+	margin: -8% 0 0 -42%;
+	position: absolute;
+	top: 50%;
+	width: 84%;
+}
+
+.el_hamburgerClose span::before {
+	transform: rotate(-45deg);
+}
+
+.el_hamburgerClose span::after {
+	transform: rotate(45deg);
+}
+
+.bl_hamburger {
+	-ms-flex-direction: column;
+	-ms-flex-pack: justify;
+	display: -ms-flexbox;
+	display: flex;
+	flex-direction: column;
+	height: calc(50vh - 55px);
+	justify-content: space-between;
+	margin: 25vh auto;
+	width: 50vw;
+}
+
+.el_hamburger_item {
+	font-size: 1em;
+}
+
+.ly_header {
+	background-color: #1b1310;
+	border-bottom: 2px solid #fff;
+	height: 75px;
+	left: 0;
+	position: fixed;
+	top: 0;
+	width: 100%;
+	z-index: 9;
+}
+
+.ly_header_inner {
+	display: -ms-flexbox;
+	display: flex;
+}
+
+.ly_header .bl_hamburgerMenu {
+	margin-left: auto;
+}
+
+.bl_header_gnav {
+	display: -ms-flexbox;
+	display: flex;
+}
+
+.el_header_tit {
+	color: #fff;
+	/*fs26px相当*/
+	font-size: 1.625em;
+}
+
+.bl_header_nav {
+	margin-left: auto;
+}
+
+/*==================================
+  bl_block - ページ共通
+===================================*/
+/*==================================
+  el_element - ページ共通
+===================================*/
+@media (prefers-reduced-motion: reduce) {
+
+	* {
+		animation-duration: 0.01ms !important;
+		animation-iteration-count: 1 !important;
+		scroll-behavior: auto !important;
+		transition-duration: 0.01ms !important;
+	}
+}
+
+@media screen and (max-width: 480px) {
+	/*スマートフォンの指定*/
+	.sp-visible {
+		display: block !important;
+	}
+
+	.sp-hidden {
+		display: none !important;
+	}
+
+	.ly_header {
+		padding: 15px;
+	}
+}
+
+@media screen and (min-width: 481px) and (max-width: 768px) {
+
+	.ly_header {
+		/*120/1440*/
+		padding: 24px 8.33% 0;
+	}
+}
+
+@media screen and (min-width: 769px) {
+	/*PCの指定*/
+	.el_copyRights {
+		font-size: 0.875em;
+	}
+
+	.ly_header {
+		/*120/1440*/
+		padding: 24px 8.33% 0;
+	}
+}
+
+@media (prefers-color-scheme: dark) {
+	/*ブラウザのダークモードの指定*/
+}

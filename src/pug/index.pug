@@ -1,0 +1,93 @@
+//- タイトルと概要だけ変数化してあります 適宜編集して下さい
+//- パスは基本そのまま。下層ページを作る際に変更する 値:".."
+- var title = 'タイトル！'
+- var pageDescription = 'ページの説明文です。'
+- var path = '.'
+doctype html
+html(lang="ja" prefix="og: http://ogp.me/ns#")
+	head
+		meta(charset="utf-8")
+		meta(http-equiv="X-UA-Compatible" content="IE=edge")
+		meta(name="description" content=pageDescription)
+		meta(name="viewport" content="width=device-width, initial-scale=1")
+		// 検索避けの設定
+		meta(meta name="robots" content="noindex,nofollow")
+		// twitter card,ogp tag
+		meta(meta name="twitter:card" content="summary_large_image")
+		meta(meta name="twitter:site" content="ユーザー名")
+		meta(meta property="og:title" content="クリスタ中級編")
+		meta(meta property="og:type" content="website")
+		meta(meta property="og:url" content="記事のURL")
+		meta(meta property="og:site_name" content="サイト名")
+		meta(meta property="og:image" content="画像URL")
+		meta(meta property="og:description" content="クリスタ中級編を作ってみたよ")
+		// Facebook用の記述
+		meta(property="fb:app_id" content="[app_id]")
+		title #{title}
+		link(rel="stylesheet" href=path + "/css/style.css")
+		link(rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noto+Serif|Noto+Serif+JP&display=swap")
+		script(src="js/main.js" defer)
+	body
+		.ly_body_inner
+			include header.pug
+			///.header
+			.ly_contentsWrapper
+				section.bl_MV
+					h1.bl_MV_tit Design for Smile.
+					p.bl_MV_subTit 快適なオフィスをデザインする
+				///.bl_MV
+				section.bl_concept#lk_concept
+					h2.el_concept_tit CONCEPT
+					h3.el_concept_subTit “働きたくなる空間”をデザインすることで人々を幸せにする。
+					p.el_concept_copy 私たちは、オフィスに特化した空間デザイン専門としております。その理由は、「働きたくなる空間で仕事ができれば多くの人を幸せにできるのではないか」と考えるためです。そんな想いの株式会社Cresta Designだからこそできる空間デザインを提供させていただきます。
+					p.bl_concept_img
+						img(class="bl_concept_img" src="img/concept-image@2x.jpg" alt="デザインされた空間の画像")
+					p.el_concept_footCopy Our Concept
+				///.bl_concept
+				section.bl_works#lk_works
+					h2.el_works_tit Works
+					.bl_works_box
+						p.bl_works_img
+							img(class="el_works_img" src="img/card-img01@2x.jpg" alt="新規サイトの画像")
+						p.el_works_copy 新規サイトを公開しました。今回のサイトは白と黒を基調にしたミニマルなデザインになっています。
+					///.bl_works_box
+					.bl_works_box
+						p.bl_works_img
+							img(class="el_works_img" src="img/card-img02@2x.jpg" alt="新規サイトの画像")
+						p.el_works_copy 新規サイトを公開しました。今回のサイトは白と黒を基調にしたミニマルなデザインになっています。
+					///.bl_works_box
+					.bl_works_box
+						p.bl_works_img
+							img(class="el_works_img" src="img/card-img03@2x.jpg" alt="新規サイトの画像")
+						p.el_works_copy 新規サイトを公開しました。今回のサイトは白と黒を基調にしたミニマルなデザインになっています。
+					///.bl_works_box
+					//include el_button.pug
+				///.bl_works
+				section.bl_service#lk_service
+					h2.el_service_tit Service
+					.bl_service_box
+						p.bl_service_img
+							img(class="el_service_img" src="img/service-img01@2x.jpg" alt="Hearingへの画像")
+						p.el_service_copy Hearing
+					///.bl_service_box
+					.bl_service_box
+						p.bl_service_img
+							img(class="el_service_img" src="img/service-img02@2x.jpg" alt="Planningへの画像")
+						p.el_service_copy Hearing
+					///.bl_service_box
+					.bl_service_box
+						p.bl_service_img
+							img(class="el_service_img" src="img/service-img03@2x.jpg" alt="Directionへの画像")
+						p.el_service_copy Direction
+					///.bl_service_box
+					p.el_service_footCopy Our Service
+				///.bl_service
+				secton.bl_contact#lk_contact
+					h2.el_contact_tit Contact
+					p.el_contact_copy お気軽にご相談ください。
+					//include el_button
+				///.bl_contact
+			///.contentsWrapper
+			include footer.pug
+			///.footer
+		///.ly_body_inner

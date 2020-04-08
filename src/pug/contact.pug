@@ -39,18 +39,20 @@ html(lang="ja" prefix="og: http://ogp.me/ns#")
 			form.ly_contactForm(action="sample.php" method="post")
 				dl.bl_contactForm
 					dt.hp-pb15 お問い合わせ内容
-					dd.bl_contactForm_chkbox
-						input.el_contactForm_chkbox#documentRequest(type="checkbox" name="documentRequest" value="documentRequest") 
-						|
-						label(for="documentRequest") 資料請求
-					dd.bl_contactForm_chkbox
-						input.el_contactForm_chkbox#conversation(type="checkbox" name="conversation" value="conversation") 
-						|
-						label(for="conversation") お電話でのご相談を希望
-					dd.bl_contactForm_chkbox
-						input.el_contactForm_chkbox#application(type="checkbox" name="application" value="application") 
-						|
-						label(for="application") 申し込み
+					dd.bl_contactForm_chkboxCont
+						ul.bl_contactForm_chkboxCont_inner.hp-reset
+							li
+								input.el_contactForm_chkbox#documentRequest(type="checkbox" name="documentRequest" value="documentRequest") 
+								|
+								label(for="documentRequest") 資料請求
+							li
+								input.el_contactForm_chkbox#conversation(type="checkbox" name="conversation" value="conversation") 
+								|
+								label(for="conversation") お電話でのご相談を希望
+							li
+								input.el_contactForm_chkbox#application(type="checkbox" name="application" value="application") 
+								|
+								label(for="application") 申し込み
 					dt
 						label(for="your-name") 担当者名
 					dd.hp-mb25
@@ -66,7 +68,7 @@ html(lang="ja" prefix="og: http://ogp.me/ns#")
 					dt
 						label(for="your-opinion") その他
 					dd.hp-mb80
-						input#your-opinion(type="textarea" name="your-opinion")
+						textarea#your-opinion(name="your-opinion" cols="40" rows="12")
 				//.bl_contactForm
 				input.el_button.el_button__bgcYel.hp-mb80(type="submit" name="button" value="Submit")
 			///.ly_contactForm

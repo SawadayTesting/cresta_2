@@ -120,6 +120,10 @@ img {
 }
 
 /*hp-:ヘルパークラス*/
+.hp-reset {
+  margin: 0 !important;
+  padding: 0 !important;
+}
 
 .hp-mb0 {
   margin-bottom: 0 !important;
@@ -285,6 +289,8 @@ img {
   color: #fff;
   flex: 1 1;
   font-size: 26px;
+  font-style: italic;
+  font-weight: bold;
 }
 
 /*---------------------
@@ -292,6 +298,12 @@ img {
 ----------------------*/
 .bl_header_gnav {
   display: flex;
+}
+
+.el_header_gnavItem {
+  font-size: 1em;
+  font-style: italic;
+  font-weight: bold;
 }
 
 .el_header_gnavItem + .el_header_gnavItem {
@@ -420,8 +432,10 @@ img {
 .el_contactMV_tit, .el_contactMV_footCopy {
   color: #fff;
   font-size: 30px;
+  font-style: italic;
   font-weight: bold;
   left: 50%;
+  letter-spacing: .1em;
   position: absolute;
   top: 175px;
   transform: translateX(-50%);
@@ -451,13 +465,18 @@ img {
   cursor: pointer;
 }
 
-.bl_contactForm input {
+.bl_contactForm input,
+.bl_contactForm textarea {
   border: 1px solid #000;
   width: 100%;
 }
 
-.bl_contactForm_chkbox {
+.bl_contactForm_chkboxCont {
   margin-bottom: 11px;
+}
+
+.bl_contactForm_chkboxCont_inner {
+  display: block;
 }
 
 .el_contactForm_chkbox {
@@ -465,7 +484,7 @@ img {
 }
 
 /* チェックボックスの代わりを成すラベル */
-.bl_contactForm_chkbox input[type="checkbox"] + label {
+.bl_contactForm_chkboxCont input[type="checkbox"] + label {
   display: none;
   display: inline-block;
   padding-left: 17px;
@@ -474,7 +493,7 @@ img {
 }
 
 /* ラベルの左に表示させる正方形のボックス□ */
-.bl_contactForm_chkbox input[type="checkbox"] + label::before {
+.bl_contactForm_chkboxCont input[type="checkbox"] + label::before {
   background-color: #FFF;
   border: 1px solid;
   border-color: #585753;
@@ -490,7 +509,7 @@ img {
 }
 
 /* チェックが入った時のレ点 */
-.bl_contactForm_chkbox input[type="checkbox"]:checked + label::after {
+.bl_contactForm_chkboxCont input[type="checkbox"]:checked + label::after {
   border-bottom: 1.5px solid;
   border-color: #585753;
   border-left: 1.5px solid;
@@ -752,9 +771,24 @@ img {
     margin: 30px auto 0;
     width: calc(100% - 120px);
   }
+  .el_contactMV_tit, .el_contactMV_footCopy {
+    font-size: 60px;
+  }
   .ly_contactForm {
     max-width: 700px;
     width: 100%;
+  }
+  .bl_contactForm_chkboxCont {
+    margin-bottom: 25px;
+  }
+  .bl_contactForm_chkboxCont_inner {
+    display: flex;
+  }
+  .bl_contactForm_chkboxCont input[type="checkbox"] + label {
+    padding-left: 20px;
+  }
+  .bl_contactForm_chkboxCont input[type="checkbox"] + label {
+    padding-right: 20px;
   }
   .el_footCopy {
     font-size: 90px;
@@ -855,9 +889,24 @@ img {
     margin: 30px auto 0;
     width: calc(100% - 240px);
   }
+  .el_contactMV_tit, .el_contactMV_footCopy {
+    font-size: 60px;
+  }
   .ly_contactForm {
     max-width: 700px;
     width: 100%;
+  }
+  .bl_contactForm_chkboxCont {
+    margin-bottom: 25px;
+  }
+  .bl_contactForm_chkboxCont_inner {
+    display: flex;
+  }
+  .bl_contactForm_chkboxCont input[type="checkbox"] + label {
+    padding-left: 20px;
+  }
+  .bl_contactForm_chkboxCont input[type="checkbox"] + label {
+    padding-right: 20px;
   }
   .el_footCopy {
     font-size: 90px;

@@ -22,6 +22,8 @@
 .el_header_tit {
 	color: #fff;
 	font-size: 26px;
+	font-weight: bold;
+	font-style: italic;
 	flex: 1; //ナビゲーションを右に押し出す
 }
 /*---------------------
@@ -33,6 +35,11 @@
 	}
 }
 .el_header {
+	&_gnavItem {
+		font-size: 1em;
+		font-weight: bold;
+		font-style: italic;
+	}
 	&_gnavItem + &_gnavItem {
 		margin-left: 30px;
 	}

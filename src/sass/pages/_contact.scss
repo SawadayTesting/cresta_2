@@ -14,7 +14,15 @@
 		position: absolute;
 		z-index: #{$z-common_copy};
 		font-size: 30px;
+		@media screen and(min-width:#{$bp-tab}) and (max-width:#{$bp-tabMx}) {
+			font-size: 60px;
+		}
+		@media screen and(min-width:#{$bp-pc}) {
+			font-size: 60px;
+		}
 		font-weight: bold;
+		font-style: italic;
+		letter-spacing: .1em;
 		top: 175px;
 		left: 50%;
 		transform: translateX(-50%);
@@ -49,12 +57,28 @@
 	label {
 		cursor: pointer;
 	}
-	input {
+	input,
+	textarea{
 		border: 1px solid #000;
 		width: 100%;
 	}
-	&_chkbox {
+	&_chkboxCont {
 		margin-bottom: 11px;
+		@media screen and(min-width:#{$bp-tab}) and (max-width:#{$bp-tabMx}) {
+			margin-bottom: 25px;
+		}
+		@media screen and(min-width:#{$bp-pc}) {
+			margin-bottom: 25px;
+		}
+	}
+	&_chkboxCont_inner {
+		display: block;
+		@media screen and(min-width:#{$bp-tab}) and (max-width:#{$bp-tabMx}) {
+			display: flex;
+		}
+		@media screen and(min-width:#{$bp-pc}) {
+			display: flex;
+		}
 	}
 }
 .el_contactForm {
@@ -63,16 +87,27 @@
 	}
 }
 /* チェックボックスの代わりを成すラベル */
-.bl_contactForm_chkbox input[type="checkbox"] + label {
+.bl_contactForm_chkboxCont input[type="checkbox"] + label {
 	display: none;
-	//cursor: pointer;
 	display: inline-block;
 	position: relative;
-	padding-left: 17px;
+	padding-left: 17px;//chkbox10px + 7px
+	@media screen and(min-width:#{$bp-tab}) and (max-width:#{$bp-tabMx}) {
+		padding-left: 20px;
+	}
+	@media screen and(min-width:#{$bp-pc}) {
+		padding-left: 20px;
+	}
 	padding-right: 10px;
+	@media screen and(min-width:#{$bp-tab}) and (max-width:#{$bp-tabMx}) {
+		padding-right: 20px;
+	}
+	@media screen and(min-width:#{$bp-pc}) {
+		padding-right: 20px;
+	}
 }
 /* ラベルの左に表示させる正方形のボックス□ */
-.bl_contactForm_chkbox input[type="checkbox"] + label::before {
+.bl_contactForm_chkboxCont input[type="checkbox"] + label::before {
 	content: "";
 	position: absolute;
 	display: block;
@@ -89,7 +124,7 @@
 	//背景の色変更 お好きな色を
 }
 /* チェックが入った時のレ点 */
-.bl_contactForm_chkbox input[type="checkbox"]:checked + label::after {
+.bl_contactForm_chkboxCont input[type="checkbox"]:checked + label::after {
 	content: "";
 	position: absolute;
 	display: block;

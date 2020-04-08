@@ -3,29 +3,34 @@
   共通部分 - タイプセレクタ+見出し+hp-の指定。
 	必要なら、後述のcssで上書きしていく。
 ===================================*/
+//-----------------------------------
+//	リセットCSSに記述済みの場合、適宜省略
+//-----------------------------------
 body {
-	font-family: "Helvetica Neue", "Arial", "Hiragino Kaku Gothic ProN", "Hiragino Sans", "Meiryo", sans-serif;
-	//sanitize.cssの場合、省略可。
+	//英語フォント>日本語フォント
+	font-family: 'Noto Serif', 'Noto Serif JP', serif;
 	//box-sizing: border-box;
 	//ボディのbgc指定
 	background-color: #{$bgc-body};
 	//横スクロールの発生防止
 	overflow-x: hidden;
-	//line-height: 1.5〜2で指定する。sanitiseに指定あり@1.5
+	//縦スクロールの表示:中央詰めによるがたつきを防止。任意。
+	overflow-y: scroll;
+	//line-height: 1.5〜2で指定する。
 	//line-height: 1.5;
-	//letter-spacing: .05em〜0.1emで指定する。sanitiseに指定あり
-	//letter-spacing: .05em;
+	//letter-spacing: .05em〜0.1emで指定する。
+	letter-spacing: .05em;
 	//黒字を見やすく。初期設定は#333にしてあります。
-	//h1~6などは、後述し、優先度or詳細度で上書き前提です。適宜対応願います。
+	//h1~6などは後述し、優先度or詳細度で上書き前提です。適宜対応願います。
 	color: #{$c-body};
 }
 //セクション間の余白は150px〜200pxに指定する
 section {
-	margin-bottom: 150px;
+	margin-bottom: 100px;
 }
 a {
 	color: #fff;
-	display: block;
+	//display: block;
 	text-decoration: none;
 }
 ul, ol {
@@ -38,69 +43,73 @@ img {
 	max-width: 100%;
 	height: auto;
 }
+//	object-fit: cover; 必要なら
 /*見出し*/
-.el {
-	&_heading {
-		line-height
-		/*24 / 16px*/
-		: 1.5;
-		letter-spacing
-		/*16 * 0.50*/
-		: .8px;
-		white-space: nowrap;
+.el_lv2heading {
+	//borderの長さ
+	$w-border: 100px;
+	//borderのml
+	$ml-border: 30px;
+	//borderのmr
+	$mr-border: 15px;
+	width: 100%;
+	font-size: 30px;
+	@media screen and(min-width:#{$bp-tab}) and (max-width:#{$bp-tabMx}) {
+		font-size: 60px;
 	}
-	/*h1要素*/
-	&_heading1 {
-		font-family: Roboto;
-		color: #fff;
-		@media screen and (max-width:#{$bp-sp}) {
-			/*30px相当*/
-			font-size: 1.875em;
-			font-weight: medium;
-		}
+	@media screen and(min-width:#{$bp-pc}) {
+		font-size: 60px;
+	}
+	font-style: italic;
+	font-weight: bold;
+	& > span {
+		position: relative;
+	}
+	& > span::after {
+		position: absolute;
+		margin-left: #{$ml-border};
+		top: 50%;
+		left: 100%;
+		display: block;
+		content: "";
+		width: $w-border;
+		border-bottom: 5px solid currentColor;
 		@media screen and(min-width:#{$bp-tab}) and (max-width:#{$bp-tabMx}) {
-			/*50px相当*/
-			font-size: 3.125em;
-			font-weight: normal;
+			width: 200px;
 		}
-		@media screen and (min-width:#{$bp-pc}) {
-			/*50px相当*/
-			font-size: 3.125em;
-			font-weight: normal;
+		@media screen and(min-width:#{$bp-pc}) {
+			width: 200px;
 		}
 	}
-	/*h2要素*/
-	&_lv2Heading {
-		font-family: Roboto;
-		font-size: 2.25em;
+	&#{&}__white {
+		color: #fff;
+		& > span::after {
+			color: currentColor;
+		}
 	}
-	/*お問い合わせ*/
-	&_lv3Heading {
-		line-height: 3;
-		letter-spacing: 1.6px;
-		font-size: 1.5em;
-		font-family: Noto Sans CJK JP;
-		margin-bottom: 75px;
-	}
-	/*h3要素*/
-	&_heading3 {
-		letter-spacing: .16px;
-		line-height: 2.5;
-		margin-bottom: 34px;
-	}
-	&_copy {
-		font-size: .875em;
-		line-height
-		/*30 / 16px*/
-		: 1.875;
-		letter-spacing
-		/*16 * 0.50*/
-		: .8px;
+	&#{&}__right {
+		text-align: right;
+		width: calc(100% - #{$w-border} - #{$ml-border} - #{$mr-border});
+		@media screen and(min-width:#{$bp-tab}) and (max-width:#{$bp-tabMx}) {
+			width: calc(100% - 200px - #{$ml-border} - 120px);
+		}
+		@media screen and(min-width:#{$bp-pc}) {
+			width: calc(100% - 200px - #{$ml-border} - 120px);
+		}
+		& > span::after {
+			margin-right: $mr-border;
+			@media screen and(min-width:#{$bp-tab}) and (max-width:#{$bp-tabMx}) {
+				margin-right: 70px;
+			}
+			@media screen and(min-width:#{$bp-pc}) {
+				margin-right: 70px;
+			}
+		}
 	}
 }
-/*hp-：ヘルパークラス*/
+/*hp-:ヘルパークラス*/
 //@include reset; でもリセットできます
-//reset = m0; p0;　です
+//reset = m0; p0; です
 .hp-reset {
 	@include reset;
 }
@@ -113,6 +122,15 @@ img {
 }
 .hp-mb0 {
 	margin-bottom: 0 !important;
+}
+.hp-mb30 {
+	margin-bottom: 15px !important;
+}
+.hp-mb30 {
+	margin-bottom: 30px !important;
+}
+.hp-mb34 {
+	margin-bottom: 34px !important;
 }
 .hp-mb40 {
 	margin-bottom: 40px !important;
@@ -129,24 +147,58 @@ img {
 .hp-mb75 {
 	margin-bottom: 75px !important;
 }
+.hp-mb80 {
+	margin-bottom: 80px !important;
+}
+.hp-ml15 {
+	margin-left: 15px !important;
+}
 .hp-mr55 {
 	margin-right: 55px !important;
 }
+.hp-mt100 {
+	margin-top: 100px !important;
+}
+.hp-pb15 {
+	padding-bottom: 15px !important;
+}
+.hp-pt40 {
+	padding-top: 40px !important;
+}
+.hp-pt100 {
+	padding-top: 100px !important;
+}
+.hp-tar {
+	text-align: right !important;
+}
 .hp-tac {
 	text-align: center !important;
+}
+.hp-tal {
+	text-align: left !important;
+}
+//改行の禁止
+.hp-wsnw {
+	white-space: nowrap !important;
 }
 /*position:fixed使用時、ページ内リンクのずれを解消*/
 .uq-anchor {
 	padding-top: #{$h-header};
 	margin-top:-#{$h-header};
 }
-@media screen and (max-width:#{$bp-sp}) {
-	/*スマートフォンの指定*/
-	.sp-visible {
+.sp-visible {
+	display: none;
+	@media screen and (max-width:#{$bp-sp}) {
 		display: block !important;
 	}
+}
+@media screen and (max-width:#{$bp-sp}) {
+	/*スマートフォンの指定*/
 	.sp-hidden {
 		display: none !important;
+	}
+	.sp-mb40 {
+		margin-bottom: 40px !important;
 	}
 	.sp-mb55 {
 		margin-bottom: 55px !important;
@@ -158,6 +210,9 @@ img {
 @media screen and(min-width:#{$bp-tab}) and (max-width:#{$bp-tabMx}) {
 	.tab-hidden {
 		display: none !important;
+	}
+	.tab-mb80 {
+		margin-bottom: 80px !important;
 	}
 }
 @media screen and (min-width:#{$bp-pc}) {
@@ -186,6 +241,9 @@ img {
 	}
 	.pc-mb75 {
 		margin-bottom: 75px !important;
+	}
+	.pc-mb80 {
+		margin-bottom: 80px !important;
 	}
 	.pc-flexBox {
 		display: flex !important;

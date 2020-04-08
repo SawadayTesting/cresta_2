@@ -1,0 +1,44 @@
+@charset "utf-8";
+/*------------------
+	contactMV
+-------------------*/
+.ly_contactMV {
+	padding-top: -#{$h-header};
+	@include bgi("../img/contact-page-bgi@2x.jpg");
+	height: 360px;
+	position: relative;
+}
+.el_contactMV {
+	&_tit {
+		color: #fff;
+		position: absolute;
+		z-index: #{$z-common_copy};
+		font-size: 30px;
+		font-weight: bold;
+		top: 175px;
+		left: 50%;
+		transform: translateX(-50%);
+	}
+	&_footCopy {
+		/*優先度で上書きしています*/
+		@extend .el_contactMV_tit;
+		left: 15px;
+		top: calc(256px -#{h-header});
+		transform: translateX(0);
+	}
+}
+/*------------------
+	contactForm
+-------------------*/
+.ly_contactForm {
+	width: calc(100% - 30px);
+	margin: 0 auto;
+}
+.bl_contactForm {
+	dt {
+		font-weight: bold;
+	}
+	input {
+		border :1px solid #000;
+	}
+}

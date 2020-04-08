@@ -13,12 +13,16 @@ $bgc-main: #1B1310;//メインカラー
 //	ヘッダーの背景色
 $bgc-header: #1B1310;
 //	フッターの背景色
-$bgc-footer: #1B1310;
+$bgc-footer: #fff;
+$bgc-btn: #F7D43F;
 //	幅関係の設定	-----------------
 //	ヘッダーの高さは70~100pxに指定
 $h-header: 75px;
 
-
+//	z-indexの指定	---------------
+$z-header: 10;
+$z-swiper-container: 1;
+$z-common_copy: 5;
 //	コンテンツの幅
 
 
@@ -30,7 +34,6 @@ $bp-tabMx:768px;
 $bp-pc:769px; //PC/タブレット縦以上
 //$bp-pcMx:1024px;
 //$bp-wpc:1025px); //ワイドPC以上
-
 
 
 //	共通モジュール@mixin	-------------------
@@ -50,30 +53,25 @@ $bp-pc:769px; //PC/タブレット縦以上
 		display: block;
 	}
 }
-//googlemapをレスポンシブ対応
-//iframeを包むdivタグのクラス名：gmap
-//css側で.gmap{include gmap75or56;}にしてください。
-//mixinにしてあるのは、他の指定やメディアクエリの併用を意図しています。
-@mixin gmap75 {
-	& {
-		height: 0;
-		overflow: hidden;
-		padding-bottom: 75%;//アスペクト比4:3
-		position: relative;
-	}
-	& iframe {
-		position: absolute;
-		left: 0;
-		top: 0;
-		height: 100%;
-		width: 100%;
-	}
+//background-imageの指定
+//@include bgi("../img/ファイル名");
+//パスは適宜対応
+@mixin bgi($bgi) {
+	background-image: url($bgi);
+	background-position: center center;
+	background-repeat: no-repeat;
+	background-size: cover;
 }
-@mixin gmap56 {
+//googlemapをレスポンシブ対応
+//iframeを包むdivタグを作成
+//.div{@include gmap(75or56.25);}にしてください。
+//75 = 4:3
+//56.25 = 16:9
+@mixin gmap($aspect) {
 	& {
 		height: 0;
 		overflow: hidden;
-		padding-bottom: 56.25%;//アスペクト比16:9
+		padding-bottom: $aspect#{'%'};//アスペクト比の変数
 		position: relative;
 	}
 	& iframe {

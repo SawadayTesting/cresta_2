@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="ja" prefix="og: http://ogp.me/ns#">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="クリスタ中級編を作成。">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- 検索避けの設定-->
+    <meta meta name="robots" content="noindex,nofollow">
+    <!-- twitter card,ogp tag-->
+    <meta meta name="twitter:card" content="summary_large_image">
+    <meta meta name="twitter:site" content="ユーザー名">
+    <meta meta property="og:title" content="クリスタ中級編">
+    <meta meta property="og:type" content="website">
+    <meta meta property="og:url" content="記事のURL">
+    <meta meta property="og:site_name" content="サイト名">
+    <meta meta property="og:image" content="画像URL">
+    <meta meta property="og:description" content="クリスタ中級編を作ってみたよ">
+    <!-- Facebook用の記述-->
+    <meta property="fb:app_id" content="[app_id]">
+    <title>クリスタ中級編 - contact</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noto+Serif|Noto+Serif+JP&amp;display=swap">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <!--script(src="js/main.js")-->
+  </head>
+  <body>
+    <div class="ly_body_inner">
+      <header class="ly_header js_header">
+        <div class="ly_header_inner">
+          <p class="el_header_tit">Cresta Design</p>
+          <!--ハンバーガーメニュー-->
+          <div class="pc-hidden tab-hidden nav-drawer">
+            <input class="nav-unshown" id="nav-input" type="checkbox">
+            <label id="nav-open" for="nav-input"><span></span></label>
+            <div id="nav-content">
+              <label class="el_hamburgerClose" for="nav-input"><span></span></label>
+              <div class="bl_hamburgerWrapper">
+                <ul class="bl_hamburger">
+                  <li class="el_hamburger_item hp-tac"><a href="#lk_concept">Concept</a></li>
+                  <li class="el_hamburger_item hp-tac"><a href="#lk_service">Service</a></li>
+                  <li class="el_hamburger_item hp-tac"><a href="#lk_works">Works</a></li>
+                  <li class="el_hamburger_item hp-tac"><a href="#lk_contact">Contact</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <!--PC用ナビゲーション-->
+          <nav class="bl_header_nav sp-hidden">
+            <ul class="bl_header_gnav">
+              <li class="el_header_gnavItem"><a href="#lk_about">About</a></li>
+              <li class="el_header_gnavItem"><a href="#lk_service">Service</a></li>
+              <li class="el_header_gnavItem"><a href="#lk_news">Contents</a></li>
+              <li class="el_header_gnavItem"><a href="#lk_contact">Contact</a></li>
+            </ul>
+          </nav>
+        </div>
+      </header>
+      <!--/.header-->
+      <section class="ly_contactMV">
+        <h1 class="el_contactMV_tit">Contact</h1>
+        <p class="el_contactMV_footCopy el_footCopy el_footCopy__left">Contact us</p>
+      </section>
+      <!--/.ly_contactMV-->
+      <form class="ly_contactForm" action="sample.php" method="post">
+        <dl class="bl_contactForm">
+          <dt class="hp-pb15">お問い合わせ内容</dt>
+          <dd>
+            <input id="your-question" type="checkbox" name="your-question" value="documentRequest">資料請求
+          </dd>
+          <dd>
+            <input id="your-question" type="checkbox" name="your-question" value="documentRequest">お電話でのご相談を希望
+          </dd>
+          <dd>
+            <input id="your-question" type="checkbox" name="your-question" value="documentRequest">申し込み
+          </dd>
+          <dt label for="your-name">担当者名</dt>
+          <dd>
+            <input id="your-name" type="text" name="your-name" required>
+          </dd>
+          <dt label for="your-tel">電話番号</dt>
+          <dd>
+            <input id="your-tel" type="tel" name="your-tel">
+          </dd>
+          <dt label for="your-email">メールアドレス（必須）：</dt>
+          <dd>
+            <input id="your-email" type="email" name="your-email" required>
+          </dd>
+          <dt label for="your-opinion">その他</dt>
+          <dd>
+            <input id="your-opinion" type="textarea" name="your-opinion" required>
+          </dd>
+        </dl>
+        <!--.bl_contactForm--><a class="el_button el_button_bgcYel" href="#">View more</a>
+      </form>
+      <!--/.ly_contactForm   -->
+      <footer class="ly_footer">
+        <div class="ly_footer_inner">
+          <p><small>cresta.design all rights reserved</small></p>
+        </div>
+        <!--/.footer_inner-->
+      </footer>
+      <!--/.footer-->
+    </div>
+    <!--/.ly_body_inner-->
+    <script src="js/header.js"></script>
+    <script src="js/main.js"></script>
+  </body>
+</html>

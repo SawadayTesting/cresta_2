@@ -9,12 +9,17 @@
 @import "_foundation/variables";//便利な変数を定義
 @import "_foundation/aModernCssReset";//リセットCSSを指定
 @import "_foundation/base";//全ページの共通事項を記述
-//@import "_foundation/js/**";
+@import "_foundation/js/**";//js付随のCSSがあれば
 
 /*==================================
-  ly_layout - ページ共通
+  header - ページ共通
 ===================================*/
-@import "ly_layout/**";
+@import "ly_layout/header";
+
+/*==================================
+  pages - ページ共通
+===================================*/
+@import "pages/**";
 
 /*==================================
   bl_block - ページ共通
@@ -25,3 +30,8 @@
   el_element - ページ共通
 ===================================*/
 @import "el_element/**";
+
+/*==================================
+  footer - ページ共通
+===================================*/
+@import "ly_layout/footer";

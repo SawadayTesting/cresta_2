@@ -1,0 +1,325 @@
+@charset "utf-8";
+.ly_body_inner {
+	position: relative;
+}
+.el_footCopy {
+	$fs: 40px;
+	color: #171717;
+	opacity: .05;
+	font-size: $fs;
+	@media screen and(min-width:#{$bp-tab}) and (max-width:#{$bp-tabMx}) {
+		font-size: 90px;
+		padding-bottom: 70px;
+	}
+	@media screen and(min-width:#{$bp-pc}) {
+		font-size: 90px;
+		padding-bottom: 70px;
+	}
+	letter-spacing: calc(#{$fs} * .05);
+	text-align: right;
+	font-weight: bold;
+	margin-top: 40px;
+	@media screen and(min-width:#{$bp-tab}) and (max-width:#{$bp-tabMx}) {
+		margin-top: 70px;
+	}
+	@media screen and(min-width:#{$bp-pc}) {
+		margin-top: 70px;
+	}
+	margin-right: 15px;
+	padding-bottom: 40px;
+	/*後で場所再検討*/
+	&#{&}__left {
+		text-align: left;
+		margin-left: 15px;
+		@media screen and(min-width:#{$bp-tab}) and (max-width:#{$bp-tabMx}) {
+			margin-left: 120px;
+		}
+		@media screen and(min-width:#{$bp-pc}) {
+			margin-left: 120px;
+		}
+		color: #fff;
+		opacity: .1;
+	}
+}
+/*------------------
+	MV
+-------------------*/
+.bl_MV {
+	%copy {
+		color: #fff;
+		position: absolute;
+		z-index: #{$z-common_copy};
+		font-weight: bold;
+	}
+	padding-top: -#{$h-header};
+	position: relative;
+	&_tit {
+		@extend %copy;
+		$fs: 37px;
+		top: calc(136px + #{$h-header});
+		left: 15px;
+		font-size: $fs;
+		letter-spacing: calc(#{$fs} * .05);
+		@media screen and(min-width:#{$bp-tab}) and (max-width:#{$bp-tabMx}) {
+			$fs: 70px;
+			font-size: $fs;
+			top: calc(354px + #{$h-header});
+			left: 60px;
+		}
+		@media screen and(min-width:#{$bp-pc}) {
+			$fs: 70px;
+			font-size: $fs;
+			top: calc(354px + #{$h-header});
+			left: 120px;
+		}
+	}
+	&_subTit {
+		$fs: 30px;
+		@extend %copy;
+		top: 312px;
+		//$fs: 30px;
+		left: 50%;
+		transform: translateX(-50%);
+		font-size: $fs;
+		letter-spacing: calc(#{$fs} * .05);
+		@media screen and(min-width:#{$bp-tab}) and (max-width:#{$bp-tabMx}) {
+			$fs: 40px;
+			top: calc(480px + #{$h-header});
+			left: 100px;
+			transform: translateX(0%);
+			font-size: $fs;
+			letter-spacing: calc(#{$fs} * .05);
+		}
+		@media screen and(min-width:#{$bp-pc}) {
+			$fs: 40px;
+			top: calc(480px + #{$h-header});
+			left: 160px;
+			transform: translateX(0%);
+			font-size: $fs;
+			letter-spacing: calc(#{$fs} * .05);
+		}
+		white-space: nowrap;
+	}
+}
+.swiper-slide > img {
+	@media screen and (max-width:#{$bp-sp}) {
+		height: 100vh;
+	}
+	@media screen and(min-width:#{$bp-tab}) and (max-width:#{$bp-tabMx}) {
+		min-width: 100vw;
+		height: 100vh;
+	}
+	@media screen and(min-width:#{$bp-pc}) {
+		min-width: 100vw;
+		height: 100vh;
+	}
+}
+/*------------------
+	concept
+-------------------*/
+.ly_concept {
+	width: calc(100% - 30px);
+	max-width: none;
+	margin: 0 auto;
+	@media screen and(min-width:#{$bp-tab}) and (max-width:#{$bp-tabMx}) {
+		width: 100%;
+		max-width: 1024px;
+	}
+	@media screen and(min-width:#{$bp-pc}) {
+		width: 100%;
+		max-width: 1100px;
+	}
+	/*innnerを1100にする*/
+	&_inner {
+		@media screen and(min-width:#{$bp-pc}) {
+			margin-left: 100px;
+		}
+	}
+}
+.el_concept {
+	&_subTit {
+		font-weight: bold;
+		font-size: 20px;
+		margin-bottom: 34px;
+		@media screen and(min-width:#{$bp-tab}) and (max-width:#{$bp-tabMx}) {
+			font-size: 30px;
+			text-align: center;
+			margin-bottom: 30px;
+		}
+		@media screen and(min-width:#{$bp-pc}) {
+			font-size: 30px;
+			text-align: center;
+			margin-bottom: 30px;
+		}
+	}
+	&_copy {
+		@media screen and(min-width:#{$bp-tab}) and (max-width:#{$bp-tabMx}) {
+			width: 440px;
+			margin-right: 120px;
+			padding-top: 47px;
+		}
+		@media screen and(min-width:#{$bp-pc}) {
+			width: 440px;
+			margin-right: 120px;
+			padding-top: 47px;
+		}
+	}
+}
+.bl_concept_container {
+	display: block;
+	@media screen and(min-width:#{$bp-tab}) and (max-width:#{$bp-tabMx}) {
+		display: flex;
+	}
+	@media screen and(min-width:#{$bp-pc}) {
+		display: flex;
+	}
+}
+/*------------------
+	works
+-------------------*/
+.bl_works {
+	display: flex;
+	flex-direction: column;
+	@include bgi("../img/works-bgi@2x.jpg");
+	&_boxContainer {
+		display: flex;
+		max-width: 320px;
+		@media screen and(min-width:#{$bp-tab}) and (max-width:#{$bp-tabMx}) {
+			max-width: 1000px;
+		}
+		@media screen and(min-width:#{$bp-pc}) {
+			max-width: 1000px;
+		}
+		width: 100%;
+		margin: 0 auto;
+		@media screen and (max-width:#{$bp-sp}) {
+			flex-direction: column;
+		}
+		@media screen and(min-width:#{$bp-tab}) and (max-width:#{$bp-tabMx}) {
+			flex-direction: row;
+		}
+		@media screen and(min-width:#{$bp-pc}) {
+			flex-direction: row;
+		}
+	}
+	&_box {
+		@media screen and (max-width:#{$bp-sp}) {
+			margin-top: 30px;
+		}
+		@media screen and(min-width:#{$bp-tab}) and (max-width:#{$bp-tabMx}) {
+			max-width: 320px;
+		}
+		@media screen and(min-width:#{$bp-pc}) {
+			max-width: 320px;
+		}
+		& + & {
+			@media screen and(min-width:#{$bp-tab}) and (max-width:#{$bp-tabMx}) {
+				margin-left: 20px;
+			}
+			@media screen and(min-width:#{$bp-pc}) {
+				margin-left: 20px;
+			}
+		}
+	}
+}
+.el_works {
+	&_copy {
+		background-color: #fff;
+		padding: 20px;
+	}
+}
+/*------------------
+	service
+-------------------*/
+.bl_service {
+	margin-bottom: 64px;
+	@media screen and(min-width:#{$bp-tab}) and (max-width:#{$bp-tabMx}) {
+		margin-bottom: 0px;
+	}
+	@media screen and(min-width:#{$bp-pc}) {
+		margin-bottom: 0px;
+	}
+	&_container {
+		display: block;
+		@media screen and(min-width:#{$bp-tab}) and (max-width:#{$bp-tabMx}) {
+			display: flex;
+		}
+		@media screen and(min-width:#{$bp-pc}) {
+			display: flex;
+		}
+	}
+	&_box {
+		position: relative;
+		@media screen and (max-width:#{$bp-sp}) {
+			margin-bottom: 30px;
+		}
+		@media screen and(min-width:#{$bp-tab}) and (max-width:#{$bp-tabMx}) {
+			margin-bottom: 0;
+		}
+		@media screen and(min-width:#{$bp-pc}) {
+			margin-bottom: 0;
+		}
+	}
+}
+.el_service {
+	&_tit {
+		@media screen and(min-width:#{$bp-tab}) and (max-width:#{$bp-tabMx}) {
+			padding-left: 120px;
+		}
+		@media screen and(min-width:#{$bp-pc}) {
+			padding-left: 120px;
+		}
+	}
+	&_copy {
+		font-size: 1.25em;
+		@media screen and(min-width:#{$bp-tab}) and (max-width:#{$bp-tabMx}) {
+			font-size: 2.5em;
+		}
+		@media screen and(min-width:#{$bp-pc}) {
+			font-size: 2.5em;
+		}
+		font-weight: bold;
+		font-style: italic;
+		color: #fff;
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		z-index: #{$z-common_copy};
+	}
+	&_img {
+		object-fit: cover;
+	}
+	&_img:focus, &_img:hover {
+		opacity: .7;
+	}
+	&_footCopy {
+		margin-right: 120px;
+	}
+}
+/*フィルター:場所は要移動*/
+.uq-filter {
+	background-color: #000;
+}
+
+/*------------------
+	Contact
+-------------------*/
+.bl_contact {
+	@include bgi("../img/contact-bgi@2x.jpg");
+	&_inner {
+		display: flex;
+		flex-direction: column;
+	}
+}
+.el_contact_copy {
+	color: #fff;
+	font-weight: bold;
+	font-size: 1em;
+	@media screen and(min-width:#{$bp-tab}) and (max-width:#{$bp-tabMx}) {
+		font-size: 1.25em;
+	}
+	@media screen and(min-width:#{$bp-pc}) {
+		font-size: 1.25em;
+	}
+}

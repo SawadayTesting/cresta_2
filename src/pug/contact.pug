@@ -1,0 +1,71 @@
+//- タイトルと概要だけ変数化してあります 適宜編集して下さい
+//- パスは基本そのまま。下層ページを作る際に変更する 値:".."
+- var title = 'クリスタ中級編 - contact'
+- var pageDescription = 'クリスタ中級編を作成。'
+- var path = '.'
+doctype html
+html(lang="ja" prefix="og: http://ogp.me/ns#")
+	head
+		meta(charset="utf-8")
+		meta(http-equiv="X-UA-Compatible" content="IE=edge")
+		meta(name="description" content=pageDescription)
+		meta(name="viewport" content="width=device-width, initial-scale=1")
+		// 検索避けの設定
+		meta(meta name="robots" content="noindex,nofollow")
+		// twitter card,ogp tag
+		meta(meta name="twitter:card" content="summary_large_image")
+		meta(meta name="twitter:site" content="ユーザー名")
+		meta(meta property="og:title" content="クリスタ中級編")
+		meta(meta property="og:type" content="website")
+		meta(meta property="og:url" content="記事のURL")
+		meta(meta property="og:site_name" content="サイト名")
+		meta(meta property="og:image" content="画像URL")
+		meta(meta property="og:description" content="クリスタ中級編を作ってみたよ")
+		// Facebook用の記述
+		meta(property="fb:app_id" content="[app_id]")
+		title #{title}
+		link(rel="stylesheet" href=path + "/css/style.css")
+		link(rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noto+Serif|Noto+Serif+JP&display=swap")
+		script(src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js")
+		//script(src="js/main.js")
+	body
+		.ly_body_inner
+			include _header.pug
+			///.header
+			section.ly_contactMV
+				h1.el_contactMV_tit Contact
+				p.el_contactMV_footCopy.el_footCopy.el_footCopy__left Contact us
+			///.ly_contactMV
+			form.ly_contactForm(action="sample.php" method="post")
+				dl.bl_contactForm
+					dt.hp-pb15 お問い合わせ内容
+					dd
+						input#your-question(type="checkbox" name="your-question" value="documentRequest") 
+						| 資料請求
+					dd
+						input#your-question(type="checkbox" name="your-question" value="documentRequest") 
+						| お電話でのご相談を希望
+					dd
+						input#your-question(type="checkbox" name="your-question" value="documentRequest") 
+						| 申し込み
+					dt(label for="your-name") 担当者名
+					dd
+						input#your-name(type="text" name="your-name" required) 
+					dt(label for="your-tel") 電話番号
+					dd
+						input#your-tel(type="tel" name="your-tel")
+					dt(label for="your-email") メールアドレス（必須）：
+					dd
+						input#your-email(type="email" name="your-email" required)
+					dt(label for="your-opinion") その他
+					dd
+						input#your-opinion(type="textarea" name="your-opinion" required)
+				//.bl_contactForm
+				include _el_button.pug
+			///.ly_contactForm   
+			include _footer.pug
+			///.footer
+		///.ly_body_inner
+		script(src="js/header.js")
+		//-script(src="js/swiper.js")
+		script(src="js/main.js")

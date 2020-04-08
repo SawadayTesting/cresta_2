@@ -6,13 +6,11 @@
 	//color: #fff;
 	display: flex;
 	&_inner {
-		margin: auto;//子要素にmargin: auto;でスマートな中央よせ
+		margin: auto; //子要素にmargin: auto;でスマートな中央よせ
 	}
 }
-@media screen and (min-width:#{$bp-pc}) {
-	.el_copyRights {
-		font-size: .875em;
-	}
+.el_copyRights {
+	font-size: .875em;
 }
 //footerの下にメディアクエリの記述がまとめられます。
 /*==================================

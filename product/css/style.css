@@ -712,6 +712,10 @@ img {
   margin: auto;
 }
 
+.el_copyRights {
+  font-size: .875em;
+}
+
 /*==================================
   メディアクエリ - ページ共通
 ===================================*/
@@ -747,6 +751,10 @@ img {
   .ly_header_inner {
     margin: 30px auto 0;
     width: calc(100% - 120px);
+  }
+  .ly_contactForm {
+    max-width: 700px;
+    width: 100%;
   }
   .el_footCopy {
     font-size: 90px;
@@ -846,6 +854,10 @@ img {
   .ly_header_inner {
     margin: 30px auto 0;
     width: calc(100% - 240px);
+  }
+  .ly_contactForm {
+    max-width: 700px;
+    width: 100%;
   }
   .el_footCopy {
     font-size: 90px;

@@ -39,25 +39,32 @@ html(lang="ja" prefix="og: http://ogp.me/ns#")
 			form.ly_contactForm(action="sample.php" method="post")
 				dl.bl_contactForm
 					dt.hp-pb15 お問い合わせ内容
-					dd
-						input#your-question(type="checkbox" name="your-question" value="documentRequest") 
-						| 資料請求
-					dd
-						input#your-question(type="checkbox" name="your-question" value="documentRequest") 
-						| お電話でのご相談を希望
-					dd
-						input#your-question(type="checkbox" name="your-question" value="documentRequest") 
-						| 申し込み
-					dt(label for="your-name") 担当者名
+					dd.bl_contactForm_chkbox
+						input.el_contactForm_chkbox#documentRequest(type="checkbox" name="documentRequest" value="documentRequest") 
+						|
+						label(for="documentRequest") 資料請求
+					dd.bl_contactForm_chkbox
+						input.el_contactForm_chkbox#conversation(type="checkbox" name="conversation" value="conversation") 
+						|
+						label(for="conversation") お電話でのご相談を希望
+					dd.bl_contactForm_chkbox
+						input.el_contactForm_chkbox#application(type="checkbox" name="application" value="application") 
+						|
+						label(for="application") 申し込み
+					dt
+						label(for="your-name") 担当者名
 					dd
 						input#your-name(type="text" name="your-name" required) 
-					dt(label for="your-tel") 電話番号
+					dt
+						label(for="your-tel") 電話番号
 					dd
 						input#your-tel(type="tel" name="your-tel")
-					dt(label for="your-email") メールアドレス（必須）：
+					dt
+						label(for="your-email") メールアドレス
 					dd
 						input#your-email(type="email" name="your-email" required)
-					dt(label for="your-opinion") その他
+					dt
+						label(for="your-opinion") その他
 					dd
 						input#your-opinion(type="textarea" name="your-opinion" required)
 				//.bl_contactForm

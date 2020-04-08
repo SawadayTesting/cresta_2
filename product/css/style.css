@@ -149,6 +149,10 @@ img {
   margin-left: 15px !important;
 }
 
+.hp-pb15 {
+  padding-bottom: 15px !important;
+}
+
 .hp-pt100 {
   padding-top: 100px !important;
 }
@@ -443,8 +447,66 @@ img {
   font-weight: bold;
 }
 
+.bl_contactForm dt:not(:first-child) {
+  cursor: pointer;
+}
+
 .bl_contactForm input {
   border: 1px solid #000;
+}
+
+.bl_contactForm_chkbox {
+  margin-bottom: 5px;
+}
+
+.el_contactForm_chkbox {
+  display: none;
+}
+
+/* チェックボックスの代わりを成すラベル */
+.bl_contactForm_chkbox input[type="checkbox"] + label {
+  cursor: pointer;
+  display: none;
+  display: inline-block;
+  padding-left: 25px;
+  padding-right: 10px;
+  position: relative;
+}
+
+/* ラベルの左に表示させる正方形のボックス□ */
+.bl_contactForm_chkbox input[type="checkbox"] + label::before {
+  /* 枠の色変更 お好きな色を */
+  background-color: #FFF;
+  border: 1px solid;
+  border-color: #585753;
+  box-sizing: border-box;
+  content: "";
+  display: block;
+  height: 20px;
+  left: 0;
+  margin-top: -10px;
+  position: absolute;
+  top: 50%;
+  width: 20px;
+  /* 背景の色変更 お好きな色を */
+}
+
+/* チェックが入った時のレ点 */
+.bl_contactForm_chkbox input[type="checkbox"]:checked + label::after {
+  border-bottom: 3px solid;
+  border-color: #585753;
+  border-left: 3px solid;
+  box-sizing: border-box;
+  content: "";
+  display: block;
+  height: 9px;
+  left: 3px;
+  margin-top: -9px;
+  position: absolute;
+  top: 50%;
+  transform: rotate(-45deg);
+  width: 18px;
+  /* チェックの色変更 お好きな色を */
 }
 
 .ly_body_inner {

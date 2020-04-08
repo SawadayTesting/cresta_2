@@ -38,7 +38,61 @@
 	dt {
 		font-weight: bold;
 	}
-	input {
-		border :1px solid #000;
+	dt:not(:first-child) {
+		cursor: pointer;
 	}
+	input {
+		border: 1px solid #000;
+	}
+	&_chkbox {
+		margin-bottom: 5px;
+	}
+}
+.el_contactForm {
+	&_chkbox {
+		display: none;
+	}
+}
+/* チェックボックスの代わりを成すラベル */
+.bl_contactForm_chkbox input[type="checkbox"] + label {
+	display: none;
+	cursor: pointer;
+	display: inline-block;
+	position: relative;
+	padding-left: 25px;
+	padding-right: 10px;
+}
+/* ラベルの左に表示させる正方形のボックス□ */
+.bl_contactForm_chkbox input[type="checkbox"] + label::before {
+	content: "";
+	position: absolute;
+	display: block;
+	box-sizing: border-box;
+	width: 20px;
+	height: 20px;
+	margin-top: -10px;
+	left: 0;
+	top: 50%;
+	border: 1px solid;
+	border-color: #585753;
+	/* 枠の色変更 お好きな色を */
+	background-color: #FFF;
+	/* 背景の色変更 お好きな色を */
+}
+/* チェックが入った時のレ点 */
+.bl_contactForm_chkbox input[type="checkbox"]:checked + label::after {
+	content: "";
+	position: absolute;
+	display: block;
+	box-sizing: border-box;
+	width: 18px;
+	height: 9px;
+	margin-top: -9px;
+	top: 50%;
+	left: 3px;
+	transform: rotate(-45deg);
+	border-bottom: 3px solid;
+	border-left: 3px solid;
+	border-color: #585753;
+	/* チェックの色変更 お好きな色を */
 }

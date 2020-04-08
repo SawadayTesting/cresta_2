@@ -65,28 +65,39 @@
       <form class="ly_contactForm" action="sample.php" method="post">
         <dl class="bl_contactForm">
           <dt class="hp-pb15">お問い合わせ内容</dt>
-          <dd>
-            <input id="your-question" type="checkbox" name="your-question" value="documentRequest">資料請求
+          <dd class="bl_contactForm_chkbox">
+            <input class="el_contactForm_chkbox" id="documentRequest" type="checkbox" name="documentRequest" value="documentRequest">
+            <label for="documentRequest">資料請求</label>
           </dd>
-          <dd>
-            <input id="your-question" type="checkbox" name="your-question" value="documentRequest">お電話でのご相談を希望
+          <dd class="bl_contactForm_chkbox">
+            <input class="el_contactForm_chkbox" id="conversation" type="checkbox" name="conversation" value="conversation">
+            <label for="conversation">お電話でのご相談を希望</label>
           </dd>
-          <dd>
-            <input id="your-question" type="checkbox" name="your-question" value="documentRequest">申し込み
+          <dd class="bl_contactForm_chkbox">
+            <input class="el_contactForm_chkbox" id="application" type="checkbox" name="application" value="application">
+            <label for="application">申し込み</label>
           </dd>
-          <dt label for="your-name">担当者名</dt>
+          <dt>
+            <label for="your-name">担当者名</label>
+          </dt>
           <dd>
             <input id="your-name" type="text" name="your-name" required>
           </dd>
-          <dt label for="your-tel">電話番号</dt>
+          <dt>
+            <label for="your-tel">電話番号</label>
+          </dt>
           <dd>
             <input id="your-tel" type="tel" name="your-tel">
           </dd>
-          <dt label for="your-email">メールアドレス（必須）：</dt>
+          <dt>
+            <label for="your-email">メールアドレス</label>
+          </dt>
           <dd>
             <input id="your-email" type="email" name="your-email" required>
           </dd>
-          <dt label for="your-opinion">その他</dt>
+          <dt>
+            <label for="your-opinion">その他</label>
+          </dt>
           <dd>
             <input id="your-opinion" type="textarea" name="your-opinion" required>
           </dd>

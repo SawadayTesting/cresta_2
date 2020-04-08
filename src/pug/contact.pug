@@ -53,26 +53,25 @@ html(lang="ja" prefix="og: http://ogp.me/ns#")
 						label(for="application") 申し込み
 					dt
 						label(for="your-name") 担当者名
-					dd
-						input#your-name(type="text" name="your-name" required) 
+					dd.hp-mb25
+						input#your-name(type="text" name="your-name" required)
 					dt
 						label(for="your-tel") 電話番号
-					dd
-						input#your-tel(type="tel" name="your-tel")
+					dd.hp-mb25
+						input#your-tel(type="tel" name="your-tel" required)
 					dt
 						label(for="your-email") メールアドレス
-					dd
+					dd.hp-mb25
 						input#your-email(type="email" name="your-email" required)
 					dt
 						label(for="your-opinion") その他
-					dd
-						input#your-opinion(type="textarea" name="your-opinion" required)
+					dd.hp-mb80
+						input#your-opinion(type="textarea" name="your-opinion")
 				//.bl_contactForm
-				include _el_button.pug
-			///.ly_contactForm   
+				input.el_button.el_button__bgcYel.hp-mb80(type="submit" name="button" value="Submit")
+			///.ly_contactForm
 			include _footer.pug
 			///.footer
 		///.ly_body_inner
 		script(src="js/header.js")
-		//-script(src="js/swiper.js")
 		script(src="js/main.js")

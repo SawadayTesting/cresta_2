@@ -5,16 +5,16 @@
 	width: 235px;
 	line-height: 3;
 	margin: 0 auto;
+	text-align: center;
 	font-weight: bold;
 	color: #333;
 	border: 1px solid #707070;
 	border-radius: 200px;
 	box-shadow: 0 0 6px #1B1310;
-	/*後でどうにかしろ*/
 	&:focus,
 	&:hover {
-		color: red;
-		transition: .25s;
+		opacity: .5;
+		transition: .5s;
 	}
 	&#{&}__bgcYel {
 		background-color: #{$bgc-btn};

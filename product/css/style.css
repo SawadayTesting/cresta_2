@@ -291,6 +291,7 @@ img {
   font-size: 26px;
   font-style: italic;
   font-weight: bold;
+  white-space: nowrap;
 }
 
 /*---------------------
@@ -553,6 +554,7 @@ img {
 	MV
 -------------------*/
 .bl_MV {
+  height: 100vh;
   padding-top: -75px;
   position: relative;
 }
@@ -657,6 +659,7 @@ img {
 
 .el_service_img:focus, .el_service_img:hover {
   opacity: .7;
+  transition: .3s;
 }
 
 .el_service_footCopy {
@@ -704,13 +707,13 @@ img {
   font-weight: bold;
   line-height: 3;
   margin: 0 auto;
+  text-align: center;
   width: 235px;
-  /*後でどうにかしろ*/
 }
 
 .el_button:focus, .el_button:hover {
-  color: red;
-  transition: .25s;
+  opacity: .5;
+  transition: .5s;
 }
 
 .el_button.el_button__bgcYel {

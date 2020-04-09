@@ -28,22 +28,23 @@ body {
 section {
 	margin-bottom: 100px;
 }
+//デフォルトのリンクの色。下線
 a {
 	color: #fff;
-	//display: block;
+	//display: block;//適宜
 	text-decoration: none;
 }
 ul, ol {
 	padding-left: 0;
 	list-style-type: none;
 }
-/*フルードイメージ化*/
+//フルードイメージ化
 img {
 	vertical-align: bottom;
 	max-width: 100%;
 	height: auto;
+	//object-fit: cover;//適宜
 }
-//	object-fit: cover; 必要なら
 /*見出し*/
 .el_lv2heading {
 	//borderの長さ
@@ -185,7 +186,7 @@ img {
 	white-space: nowrap !important;
 }
 /*position:fixed使用時、ページ内リンクのずれを解消*/
-.uq-anchor {
+.hp-anchor {
 	padding-top: #{$h-header};
 	margin-top:-#{$h-header};
 }

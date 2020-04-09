@@ -704,17 +704,17 @@ img {
   font-weight: bold;
   line-height: 3;
   margin: 0 auto;
-  text-align: center;
   width: 235px;
+  /*後でどうにかしろ*/
+}
+
+.el_button:focus, .el_button:hover {
+  color: red;
+  transition: .25s;
 }
 
 .el_button.el_button__bgcYel {
   background-color: #F7D43F;
-}
-
-.el_button.el_button__bgcYel:focus, .el_button.el_button__bgcYel:hover {
-  opacity: 0.5;
-  transition: .3s;
 }
 
 /*==================================

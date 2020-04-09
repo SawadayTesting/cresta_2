@@ -1,0 +1,63 @@
+@charset "utf-8";
+.el_lv2heading {
+	//borderの長さ
+	$w-border: 100px;
+	//borderのml
+	$ml-border: 30px;
+	//borderのmr
+	$mr-border: 15px;
+	width: 100%;
+	font-size: 30px;
+	@media screen and(min-width:#{$bp-tab}) and (max-width:#{$bp-tabMx}) {
+		font-size: 60px;
+	}
+	@media screen and(min-width:#{$bp-pc}) {
+		font-size: 60px;
+	}
+	font-style: italic;
+	font-weight: bold;
+	& > span {
+		position: relative;
+	}
+	& > span::after {
+		position: absolute;
+		margin-left: #{$ml-border};
+		top: 50%;
+		left: 100%;
+		display: block;
+		content: "";
+		width: $w-border;
+		border-bottom: 5px solid currentColor;
+		@media screen and(min-width:#{$bp-tab}) and (max-width:#{$bp-tabMx}) {
+			width: 200px;
+		}
+		@media screen and(min-width:#{$bp-pc}) {
+			width: 200px;
+		}
+	}
+	&#{&}__white {
+		color: #fff;
+		& > span::after {
+			color: currentColor;
+		}
+	}
+	&#{&}__right {
+		text-align: right;
+		width: calc(100% - #{$w-border} - #{$ml-border} - #{$mr-border});
+		@media screen and(min-width:#{$bp-tab}) and (max-width:#{$bp-tabMx}) {
+			width: calc(100% - 200px - #{$ml-border} - 120px);
+		}
+		@media screen and(min-width:#{$bp-pc}) {
+			width: calc(100% - 200px - #{$ml-border} - 120px);
+		}
+		& > span::after {
+			margin-right: $mr-border;
+			@media screen and(min-width:#{$bp-tab}) and (max-width:#{$bp-tabMx}) {
+				margin-right: 70px;
+			}
+			@media screen and(min-width:#{$bp-pc}) {
+				margin-right: 70px;
+			}
+		}
+	}
+}

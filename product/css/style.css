@@ -78,46 +78,6 @@ img {
   vertical-align: bottom;
 }
 
-/*見出し*/
-.el_lv2heading {
-  font-size: 30px;
-  font-style: italic;
-  font-weight: bold;
-  width: 100%;
-}
-
-.el_lv2heading > span {
-  position: relative;
-}
-
-.el_lv2heading > span::after {
-  border-bottom: 5px solid currentColor;
-  content: "";
-  display: block;
-  left: 100%;
-  margin-left: 30px;
-  position: absolute;
-  top: 50%;
-  width: 100px;
-}
-
-.el_lv2heading.el_lv2heading__white {
-  color: #fff;
-}
-
-.el_lv2heading.el_lv2heading__white > span::after {
-  color: currentColor;
-}
-
-.el_lv2heading.el_lv2heading__right {
-  text-align: right;
-  width: calc(100% - 100px - 30px - 15px);
-}
-
-.el_lv2heading.el_lv2heading__right > span::after {
-  margin-right: 15px;
-}
-
 /*hp-:ヘルパークラス*/
 .hp-reset {
   margin: 0 !important;
@@ -163,8 +123,6 @@ img {
 .hp-tac {
   text-align: center !important;
 }
-
-/*position:fixed使用時、ページ内リンクのずれを解消*/
 
 .sp-visible {
   display: none;
@@ -267,6 +225,93 @@ img {
 }
 
 /* a11y */
+
+/*==================================
+  bl_block - 共通ブロック
+===================================*/
+/*==================================
+  el_element - 共通モジュール
+===================================*/
+.el_button {
+  border: 1px solid #707070;
+  border-radius: 200px;
+  box-shadow: 0 0 6px #1B1310;
+  color: #333;
+  display: block;
+  font-weight: bold;
+  line-height: 3;
+  margin: 0 auto;
+  text-align: center;
+  width: 235px;
+}
+
+.el_button:focus, .el_button:hover {
+  opacity: .5;
+  transition: .5s;
+}
+
+.el_button.el_button__bgcYel {
+  background-color: #F7D43F;
+}
+
+.el_footCopy {
+  color: #171717;
+  font-size: 40px;
+  font-weight: bold;
+  letter-spacing: calc(40px * .05);
+  margin-right: 15px;
+  margin-top: 40px;
+  opacity: .05;
+  padding-bottom: 40px;
+  text-align: right;
+  /*後で場所再検討*/
+}
+
+.el_footCopy.el_footCopy__left {
+  color: #fff;
+  margin-left: 15px;
+  opacity: .1;
+  text-align: left;
+}
+
+.el_lv2heading {
+  font-size: 30px;
+  font-style: italic;
+  font-weight: bold;
+  width: 100%;
+}
+
+.el_lv2heading > span {
+  position: relative;
+}
+
+.el_lv2heading > span::after {
+  border-bottom: 5px solid currentColor;
+  content: "";
+  display: block;
+  left: 100%;
+  margin-left: 30px;
+  position: absolute;
+  top: 50%;
+  width: 100px;
+}
+
+.el_lv2heading.el_lv2heading__white {
+  color: #fff;
+}
+
+.el_lv2heading.el_lv2heading__white > span::after {
+  color: currentColor;
+}
+
+.el_lv2heading.el_lv2heading__right {
+  text-align: right;
+  width: calc(100% - 100px - 30px - 15px);
+}
+
+.el_lv2heading.el_lv2heading__right > span::after {
+  margin-right: 15px;
+}
 
 /*==================================
   header - ページ共通
@@ -414,139 +459,13 @@ img {
 }
 
 /*==================================
-  pages - ページ共通
+  pages - ページ固有の指定
 ===================================*/
-/*------------------
-	contactMV
--------------------*/
-.ly_contactMV {
-  background-image: url("../img/contact-page-bgi@2x.jpg");
-  background-position: center center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  height: 360px;
-  padding-top: -75px;
-  position: relative;
-}
-
-.el_contactMV_tit, .el_contactMV_footCopy {
-  color: #fff;
-  font-size: 30px;
-  font-style: italic;
-  font-weight: bold;
-  left: 50%;
-  letter-spacing: .1em;
-  position: absolute;
-  top: 175px;
-  transform: translateX(-50%);
-  z-index: 5;
-}
-
-.el_contactMV_footCopy {
-  /*優先度で上書きしています*/
-  left: 15px;
-  top: calc(256px -75px);
-  transform: translateX(0);
-}
-
-/*------------------
-	contactForm
--------------------*/
-.ly_contactForm {
-  margin: 0 auto;
-  width: calc(100% - 30px);
-}
-
-.bl_contactForm dt {
-  font-weight: bold;
-}
-
-.bl_contactForm label {
-  cursor: pointer;
-}
-
-.bl_contactForm input,
-.bl_contactForm textarea {
-  border: 1px solid #000;
-  width: 100%;
-}
-
-.bl_contactForm_chkboxCont {
-  margin-bottom: 11px;
-}
-
-.bl_contactForm_chkboxCont_inner {
-  display: block;
-}
-
-.el_contactForm_chkbox {
-  display: none;
-}
-
-/* チェックボックスの代わりを成すラベル */
-.bl_contactForm_chkboxCont input[type="checkbox"] + label {
-  display: none;
-  display: inline-block;
-  padding-left: 17px;
-  padding-right: 10px;
-  position: relative;
-}
-
-/* ラベルの左に表示させる正方形のボックス□ */
-.bl_contactForm_chkboxCont input[type="checkbox"] + label::before {
-  background-color: #FFF;
-  border: 1px solid;
-  border-color: #585753;
-  box-sizing: border-box;
-  content: "";
-  display: block;
-  height: 10px;
-  left: 0;
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 10px;
-}
-
-/* チェックが入った時のレ点 */
-.bl_contactForm_chkboxCont input[type="checkbox"]:checked + label::after {
-  border-bottom: 1.5px solid;
-  border-color: #585753;
-  border-left: 1.5px solid;
-  box-sizing: border-box;
-  content: "";
-  display: block;
-  height: 4.5px;
-  left: 1.5px;
-  margin-top: -4.5px;
-  position: absolute;
-  top: 50%;
-  transform: rotate(-45deg);
-  width: 9px;
-}
-
+/*==================================
+  index.html - ページ固有の指定
+===================================*/
 .ly_body_inner {
   position: relative;
-}
-
-.el_footCopy {
-  color: #171717;
-  font-size: 40px;
-  font-weight: bold;
-  letter-spacing: calc(40px * .05);
-  margin-right: 15px;
-  margin-top: 40px;
-  opacity: .05;
-  padding-bottom: 40px;
-  text-align: right;
-  /*後で場所再検討*/
-}
-
-.el_footCopy.el_footCopy__left {
-  color: #fff;
-  margin-left: 15px;
-  opacity: .1;
-  text-align: left;
 }
 
 /*------------------
@@ -692,31 +611,115 @@ img {
 }
 
 /*==================================
-  bl_block - ページ共通
+  contact.html
 ===================================*/
-/*==================================
-  el_element - ページ共通
-===================================*/
-.el_button {
-  border: 1px solid #707070;
-  border-radius: 200px;
-  box-shadow: 0 0 6px #1B1310;
-  color: #333;
-  display: block;
+/*------------------
+	contactMV
+-------------------*/
+.ly_contactMV {
+  background-image: url("../img/contact-page-bgi@2x.jpg");
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 360px;
+  padding-top: -75px;
+  position: relative;
+}
+
+.el_contactMV_tit, .el_contactMV_footCopy {
+  color: #fff;
+  font-size: 30px;
+  font-style: italic;
   font-weight: bold;
-  line-height: 3;
+  left: 50%;
+  letter-spacing: .1em;
+  position: absolute;
+  top: 175px;
+  transform: translateX(-50%);
+  z-index: 5;
+}
+
+.el_contactMV_footCopy {
+  /*優先度で上書きしています*/
+  left: 15px;
+  top: calc(256px -75px);
+  transform: translateX(0);
+}
+
+/*------------------
+	contactForm
+-------------------*/
+.ly_contactForm {
   margin: 0 auto;
-  text-align: center;
-  width: 235px;
+  width: calc(100% - 30px);
 }
 
-.el_button:focus, .el_button:hover {
-  opacity: .5;
-  transition: .5s;
+.bl_contactForm dt {
+  font-weight: bold;
 }
 
-.el_button.el_button__bgcYel {
-  background-color: #F7D43F;
+.bl_contactForm label {
+  cursor: pointer;
+}
+
+.bl_contactForm input,
+.bl_contactForm textarea {
+  border: 1px solid #000;
+  width: 100%;
+}
+
+.bl_contactForm_chkboxCont {
+  margin-bottom: 11px;
+}
+
+.bl_contactForm_chkboxCont_inner {
+  display: block;
+}
+
+.el_contactForm_chkbox {
+  display: none;
+}
+
+/* チェックボックスの代わりを成すラベル */
+.bl_contactForm_chkboxCont input[type="checkbox"] + label {
+  display: none;
+  display: inline-block;
+  padding-left: 17px;
+  padding-right: 10px;
+  position: relative;
+}
+
+/* ラベルの左に表示させる正方形のボックス□ */
+.bl_contactForm_chkboxCont input[type="checkbox"] + label::before {
+  background-color: #FFF;
+  border: 1px solid;
+  border-color: #585753;
+  box-sizing: border-box;
+  content: "";
+  display: block;
+  height: 10px;
+  left: 0;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 10px;
+}
+
+/* チェックが入った時のレ点 */
+.bl_contactForm_chkboxCont input[type="checkbox"]:checked + label::after {
+  border-bottom: 1.5px solid;
+  border-color: #585753;
+  border-left: 1.5px solid;
+  box-sizing: border-box;
+  content: "";
+  display: block;
+  height: 4.5px;
+  left: 1.5px;
+  margin-top: -4.5px;
+  position: absolute;
+  top: 50%;
+  transform: rotate(-45deg);
+  width: 9px;
 }
 
 /*==================================
@@ -750,7 +753,50 @@ img {
   }
 }
 
+@media screen and (max-width: 480px) {
+  .sp-visible {
+    display: block !important;
+  }
+  .sp-hidden {
+    display: none !important;
+  }
+  .sp-mb40 {
+    margin-bottom: 40px !important;
+  }
+  .nav-drawer {
+    display: block;
+  }
+  .swiper-slide > img {
+    height: 100vh;
+  }
+  .bl_works_boxContainer {
+    flex-direction: column;
+  }
+  .bl_works_box {
+    margin-top: 30px;
+  }
+  .bl_service_box {
+    margin-bottom: 30px;
+  }
+}
+
 @media screen and (min-width: 481px) and (max-width: 768px) {
+  .tab-hidden {
+    display: none !important;
+  }
+  .tab-mb80 {
+    margin-bottom: 80px !important;
+  }
+  .el_footCopy {
+    font-size: 90px;
+    padding-bottom: 70px;
+  }
+  .el_footCopy {
+    margin-top: 70px;
+  }
+  .el_footCopy.el_footCopy__left {
+    margin-left: 120px;
+  }
   .el_lv2heading {
     font-size: 60px;
   }
@@ -763,44 +809,9 @@ img {
   .el_lv2heading.el_lv2heading__right > span::after {
     margin-right: 70px;
   }
-  .tab-hidden {
-    display: none !important;
-  }
-  .tab-mb80 {
-    margin-bottom: 80px !important;
-  }
   .ly_header_inner {
     margin: 30px auto 0;
     width: calc(100% - 120px);
-  }
-  .el_contactMV_tit, .el_contactMV_footCopy {
-    font-size: 60px;
-  }
-  .ly_contactForm {
-    max-width: 700px;
-    width: 100%;
-  }
-  .bl_contactForm_chkboxCont {
-    margin-bottom: 25px;
-  }
-  .bl_contactForm_chkboxCont_inner {
-    display: flex;
-  }
-  .bl_contactForm_chkboxCont input[type="checkbox"] + label {
-    padding-left: 20px;
-  }
-  .bl_contactForm_chkboxCont input[type="checkbox"] + label {
-    padding-right: 20px;
-  }
-  .el_footCopy {
-    font-size: 90px;
-    padding-bottom: 70px;
-  }
-  .el_footCopy {
-    margin-top: 70px;
-  }
-  .el_footCopy.el_footCopy__left {
-    margin-left: 120px;
   }
   .bl_MV_tit {
     font-size: 70px;
@@ -865,32 +876,6 @@ img {
   .el_contact_copy {
     font-size: 1.25em;
   }
-}
-
-@media screen and (min-width: 769px) {
-  .el_lv2heading {
-    font-size: 60px;
-  }
-  .el_lv2heading > span::after {
-    width: 200px;
-  }
-  .el_lv2heading.el_lv2heading__right {
-    width: calc(100% - 200px - 30px - 120px);
-  }
-  .el_lv2heading.el_lv2heading__right > span::after {
-    margin-right: 70px;
-  }
-  /*PCの指定*/
-  .pc-hidden {
-    display: none !important;
-  }
-  .pc-mb80 {
-    margin-bottom: 80px !important;
-  }
-  .ly_header_inner {
-    margin: 30px auto 0;
-    width: calc(100% - 240px);
-  }
   .el_contactMV_tit, .el_contactMV_footCopy {
     font-size: 60px;
   }
@@ -910,6 +895,15 @@ img {
   .bl_contactForm_chkboxCont input[type="checkbox"] + label {
     padding-right: 20px;
   }
+}
+
+@media screen and (min-width: 769px) {
+  .pc-hidden {
+    display: none !important;
+  }
+  .pc-mb80 {
+    margin-bottom: 80px !important;
+  }
   .el_footCopy {
     font-size: 90px;
     padding-bottom: 70px;
@@ -919,6 +913,22 @@ img {
   }
   .el_footCopy.el_footCopy__left {
     margin-left: 120px;
+  }
+  .el_lv2heading {
+    font-size: 60px;
+  }
+  .el_lv2heading > span::after {
+    width: 200px;
+  }
+  .el_lv2heading.el_lv2heading__right {
+    width: calc(100% - 200px - 30px - 120px);
+  }
+  .el_lv2heading.el_lv2heading__right > span::after {
+    margin-right: 70px;
+  }
+  .ly_header_inner {
+    margin: 30px auto 0;
+    width: calc(100% - 240px);
   }
   .bl_MV_tit {
     font-size: 70px;
@@ -986,36 +996,23 @@ img {
   .el_contact_copy {
     font-size: 1.25em;
   }
-}
-
-@media screen and (max-width: 480px) {
-  .sp-visible {
-    display: block !important;
+  .el_contactMV_tit, .el_contactMV_footCopy {
+    font-size: 60px;
   }
-  /*スマートフォンの指定*/
-  .sp-hidden {
-    display: none !important;
+  .ly_contactForm {
+    max-width: 700px;
+    width: 100%;
   }
-  .sp-mb40 {
-    margin-bottom: 40px !important;
+  .bl_contactForm_chkboxCont {
+    margin-bottom: 25px;
   }
-  .nav-drawer {
-    display: block;
+  .bl_contactForm_chkboxCont_inner {
+    display: flex;
   }
-  .swiper-slide > img {
-    height: 100vh;
+  .bl_contactForm_chkboxCont input[type="checkbox"] + label {
+    padding-left: 20px;
   }
-  .bl_works_boxContainer {
-    flex-direction: column;
+  .bl_contactForm_chkboxCont input[type="checkbox"] + label {
+    padding-right: 20px;
   }
-  .bl_works_box {
-    margin-top: 30px;
-  }
-  .bl_service_box {
-    margin-bottom: 30px;
-  }
-}
-
-@media (prefers-color-scheme: dark) {
-  /*ブラウザのダークモードの指定*/
 }

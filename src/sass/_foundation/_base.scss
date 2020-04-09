@@ -45,69 +45,8 @@ img {
 	height: auto;
 	//object-fit: cover;//適宜
 }
-/*見出し*/
-.el_lv2heading {
-	//borderの長さ
-	$w-border: 100px;
-	//borderのml
-	$ml-border: 30px;
-	//borderのmr
-	$mr-border: 15px;
-	width: 100%;
-	font-size: 30px;
-	@media screen and(min-width:#{$bp-tab}) and (max-width:#{$bp-tabMx}) {
-		font-size: 60px;
-	}
-	@media screen and(min-width:#{$bp-pc}) {
-		font-size: 60px;
-	}
-	font-style: italic;
-	font-weight: bold;
-	& > span {
-		position: relative;
-	}
-	& > span::after {
-		position: absolute;
-		margin-left: #{$ml-border};
-		top: 50%;
-		left: 100%;
-		display: block;
-		content: "";
-		width: $w-border;
-		border-bottom: 5px solid currentColor;
-		@media screen and(min-width:#{$bp-tab}) and (max-width:#{$bp-tabMx}) {
-			width: 200px;
-		}
-		@media screen and(min-width:#{$bp-pc}) {
-			width: 200px;
-		}
-	}
-	&#{&}__white {
-		color: #fff;
-		& > span::after {
-			color: currentColor;
-		}
-	}
-	&#{&}__right {
-		text-align: right;
-		width: calc(100% - #{$w-border} - #{$ml-border} - #{$mr-border});
-		@media screen and(min-width:#{$bp-tab}) and (max-width:#{$bp-tabMx}) {
-			width: calc(100% - 200px - #{$ml-border} - 120px);
-		}
-		@media screen and(min-width:#{$bp-pc}) {
-			width: calc(100% - 200px - #{$ml-border} - 120px);
-		}
-		& > span::after {
-			margin-right: $mr-border;
-			@media screen and(min-width:#{$bp-tab}) and (max-width:#{$bp-tabMx}) {
-				margin-right: 70px;
-			}
-			@media screen and(min-width:#{$bp-pc}) {
-				margin-right: 70px;
-			}
-		}
-	}
-}
+//見出し
+
 /*hp-:ヘルパークラス*/
 //@include reset; でもリセットできます
 //reset = m0; p0; です
@@ -185,7 +124,7 @@ img {
 .hp-wsnw {
 	white-space: nowrap !important;
 }
-/*position:fixed使用時、ページ内リンクのずれを解消*/
+//position:fixed使用時、ページ内リンクのずれを解消
 .hp-anchor {
 	padding-top: #{$h-header};
 	margin-top:-#{$h-header};
@@ -196,8 +135,10 @@ img {
 		display: block !important;
 	}
 }
+//-----------------------------------
+//	スマートフォンの指定
+//-----------------------------------
 @media screen and (max-width:#{$bp-sp}) {
-	/*スマートフォンの指定*/
 	.sp-hidden {
 		display: none !important;
 	}
@@ -219,8 +160,10 @@ img {
 		margin-bottom: 80px !important;
 	}
 }
+//-----------------------------------
+//	PCの指定
+//-----------------------------------
 @media screen and (min-width:#{$bp-pc}) {
-	/*PCの指定*/
 	.pc-hidden {
 		display: none !important;
 	}
@@ -253,8 +196,10 @@ img {
 		display: flex !important;
 	}
 }
+//-----------------------------------
+//	ブラウザのダークモードの指定
+//-----------------------------------
 @media (prefers-color-scheme: dark) {
-	/*ブラウザのダークモードの指定*/
 	.dk-visible {
 		border: 1px solid #fff;
 	}

@@ -58,6 +58,8 @@ body {
   overflow-y: scroll;
 }
 
+/*色仮置き*/
+
 section {
   margin-bottom: 100px;
 }
@@ -335,7 +337,6 @@ img {
   font-size: 26px;
   font-style: italic;
   font-weight: bold;
-  white-space: nowrap;
 }
 
 /*---------------------
@@ -611,7 +612,7 @@ img {
 }
 
 /*==================================
-  contact.html
+  contact.html - ページ固有の指定
 ===================================*/
 /*------------------
 	contactMV
@@ -753,6 +754,17 @@ img {
   }
 }
 
+@media (prefers-color-scheme: dark) {
+  body {
+    background-color: #666;
+    color: #ddd;
+  }
+  .ly_footer {
+    background-color: #333;
+    color: #ddd;
+  }
+}
+
 @media screen and (max-width: 480px) {
   .sp-visible {
     display: block !important;
@@ -811,7 +823,7 @@ img {
   }
   .ly_header_inner {
     margin: 30px auto 0;
-    width: calc(100% - 120px);
+    width: calc(100% - 240px);
   }
   .bl_MV_tit {
     font-size: 70px;

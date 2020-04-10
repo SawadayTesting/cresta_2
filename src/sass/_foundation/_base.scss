@@ -24,6 +24,14 @@ body {
 	//h1~6などは後述し、優先度or詳細度で上書き前提です。適宜対応願います。
 	color: #{$c-body};
 }
+//ダークモード対応
+/*色仮置き*/
+@media (prefers-color-scheme: dark) {
+	body {
+		background-color: #666;
+		color: #ddd;
+	}
+}
 //セクション間の余白は150px〜200pxに指定する
 section {
 	margin-bottom: 100px;
@@ -46,7 +54,6 @@ img {
 	//object-fit: cover;//適宜
 }
 //見出し
-
 /*hp-:ヘルパークラス*/
 //@include reset; でもリセットできます
 //reset = m0; p0; です

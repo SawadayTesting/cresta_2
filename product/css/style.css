@@ -506,7 +506,6 @@ img {
 -------------------*/
 .ly_concept {
   margin: 0 auto;
-  max-width: none;
   width: calc(100% - 30px);
   /*innnerを1100にする*/
 }
@@ -759,6 +758,9 @@ img {
     background-color: #666;
     color: #ddd;
   }
+  .el_works_copy {
+    background-color: #666;
+  }
   .ly_footer {
     background-color: #333;
     color: #ddd;
@@ -823,7 +825,7 @@ img {
   }
   .ly_header_inner {
     margin: 30px auto 0;
-    width: calc(100% - 240px);
+    width: calc(100% - 30px);
   }
   .bl_MV_tit {
     font-size: 70px;
@@ -842,8 +844,7 @@ img {
     min-width: 100vw;
   }
   .ly_concept {
-    max-width: 1024px;
-    width: 100%;
+    width: 90%;
   }
   .el_concept_subTit {
     font-size: 30px;
@@ -851,9 +852,10 @@ img {
     text-align: center;
   }
   .el_concept_copy {
-    margin-right: 120px;
+    margin-right: 40px;
+    max-width: 400px;
     padding-top: 47px;
-    width: 440px;
+    width: 100%;
   }
   .bl_concept_container {
     display: flex;
@@ -883,7 +885,7 @@ img {
     padding-left: 120px;
   }
   .el_service_copy {
-    font-size: 2.5em;
+    font-size: 1.75em;
   }
   .el_contact_copy {
     font-size: 1.25em;

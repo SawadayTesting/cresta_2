@@ -10,7 +10,7 @@
 		width: calc(100% - 30px);
 		margin: 30px auto 0;
 		@media screen and(min-width:#{$bp-tab}) and (max-width:#{$bp-tabMx}) {
-			width: calc(100% - 240px);
+			width: calc(100% - 30px);
 			margin: 30px auto 0;
 		}
 		@media screen and(min-width:#{$bp-pc}) {

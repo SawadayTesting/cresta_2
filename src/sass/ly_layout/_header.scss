@@ -3,7 +3,9 @@
 .ly_header {
 	height: #{$h-header};
 	width: 100%;
-	position: fixed;
+	position: absolute;
+	top: 0;
+	left: 0;
 	z-index: #{$z-header};
 	&_inner {
 		display: flex;
@@ -26,6 +28,11 @@
 	font-style: italic;
 	flex: 1; //ナビゲーションを右に押し出す
 }
+.ly_header.is_fixed {
+	position: fixed;
+	background-color: #282f35;
+	transition: .3s;
+} 
 /*---------------------
 	PCナビ
 ----------------------*/

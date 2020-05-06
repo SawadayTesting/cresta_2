@@ -1,0 +1,8 @@
+@charset "utf-8";
+//除外された'is_fixed'
+.ly_header.is_fixed {
+  background-color: #282f35;
+  position: fixed;
+  transition: .3s;
+}
+

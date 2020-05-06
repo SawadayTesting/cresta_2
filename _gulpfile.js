@@ -41,14 +41,32 @@ const browserSync = require('browser-sync').create(),
 		server: './product' //コンパイルされたファイルが置かれたディレクトリを指定
 	}
 
-//---------------------------------------------------------------
+//---------------------------------------------------------
 
+
+// ----------------------------------------
+//		pugの監視+コンパイルするタスクを作成
+// ----------------------------------------
+//テスト機能。ejsと排他。
+const pug = require('gulp-pug');
+gulp.task("pugWatch", () => {
+	return gulp.watch(["./src/pug/**/*.pug"], () => {
+		return gulp.src(["./src/pug/**/*.pug", '!' + './src/pug/**/_*.pug'])
+			.pipe(plumber({
+				errorHandler: notify.onError("Error: <%= error.message %>")
+			}))
+			.pipe(pug({
+				pretty: true
+			}))
+			.pipe(gulp.dest("./product"))
+	});
+});
 // ----------------------------------------
 //		ejsの監視+コンパイルするタスクを作成
 // ----------------------------------------
-gulp.task("ejsWatch", function () {
+gulp.task("ejsWatch", () => {
 	// src/ejs以下の全てのejsファイルを監視
-	return gulp.watch(["src/ejs/**/*.ejs"], function () {
+	return gulp.watch(["src/ejs/**/*.ejs"], () => {
 		// .src/ejs以下の全てのejsの更新があった場合の処理
 		return (
 			gulp
@@ -72,7 +90,7 @@ gulp.task("ejsWatch", function () {
 // ----------------------------------------
 //		scssの監視+style.scssをコンパイルする
 // ----------------------------------------
-gulp.task("scssWatch", function () {
+gulp.task("scssWatch", () => {
 	// src/sass以下の全てのscssファイルを監視
 	return gulp.watch(["./src/sass/**/*.scss"], function () {
 		// .src/sass以下の全てのscssの更新があった場合の処理
@@ -108,18 +126,18 @@ gulp.task("scssWatch", function () {
 			.pipe(rename({
 				extname: '.css' //今後minify化するなら.min.cssなど
 			}))
-			// css内の未使用の指定をhtmlのクラス、要素名と対応させて検索＋削除。
-			.pipe(
-				purgecss({
-					content: ['product/**/*.html']
-				})
-			)
+			// css内の未使用の指定をhtmlのクラス、要素名と対応させて検索+削除。
+			//.pipe(
+				//purgecss({
+					//content: ['product/**/*.html']
+				//})
+			//)
 			// cssの整形
-			.pipe(
+			/*.pipe(
 				gulpStylelint({
 					fix: true
 				})
-			)
+			)*/
 			// ./src/noreset-cssにcssを保存
 			.pipe(gulp.dest("product/css"))
 		);
@@ -127,7 +145,7 @@ gulp.task("scssWatch", function () {
 });
 
 // ----------------------------------------
-//		ブラウザの監視＋更新のタスク
+//		ブラウザの監視+更新のタスク
 // ----------------------------------------
 
 // ローカルサーバーを立てる
@@ -155,20 +173,4 @@ gulp.task('browserWatch', (done) => {
 // 最初に実行されるタスク名をdefaultとする
 // parallel内のタスクを同時に実行する
 // seriesはA>Bの順序
-gulp.task('default', gulp.parallel('ejsWatch', 'scssWatch', gulp.series('serve', 'browserWatch')))
-
-// ----------------------------------------
-//		監視を伴わない手動実行タスク群
-// ----------------------------------------
-
-
-
-
-
-// ----------------------------------------
-//		実行するタスクの順序を定義 (タスク群の下部必須)
-// ----------------------------------------
-
-// 
-// 
-// 
+gulp.task('default', gulp.parallel('pugWatch', 'scssWatch', gulp.series('serve', 'browserWatch')))
